@@ -2,7 +2,11 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-  name: {
+  first_name: {
+    type: String,
+    required: true
+  },
+  last_name: {
     type: String,
     required: true
   },
@@ -15,6 +19,10 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  role: {
+    type: String,
+    enum: ['admin', 'employee']
+  }
   // organization: {
   //   type: Schema.Types.ObjectId,
   //   ref: 'Organization'
